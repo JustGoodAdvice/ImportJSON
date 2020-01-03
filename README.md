@@ -12,6 +12,7 @@ Here are all the functions available:
 | **ImportJSONFromSheet** | For use by end users to import JSON from one of the Sheets                        |
 | **ImportJSONViaPost**   | For use by end users to import a JSON feed from a URL using POST parameters       |
 | **ImportJSONBasicAuth** | For use by end users to import a JSON feed from a URL with HTTP Basic Auth        |
+| **ImportJSONBearerToken** | For use by end users to import a JSON feed from a URL with Bearer token auth    |
 | **ImportJSONAdvanced**  | For use by script developers to easily extend the functionality of this library   |
 
 Review `ImportJSON.gs` for more info on how to use these in detail.
