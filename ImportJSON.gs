@@ -275,7 +275,7 @@ function ImportJSONBasicAuth(url, username, password, query, parseOptions) {
  * @customfunction
  **/
 function ImportJSONBearerToken(url, token, query, parseOptions) {
-  var header = {headers: {Authorization: "Bearer " + token}};
+  var header = {headers: {Authorization: "Bearer " + token, Accept: "application/json; charset=utf-8"}};
   return ImportJSONAdvanced(url, header, query, parseOptions, includeXPath_, defaultTransform_);
 }
 
@@ -536,9 +536,12 @@ function defaultTransform_(data, row, column, options) {
     data[row][column] = toTitleCase_(data[row][column].toString().replace(/[\/\_]/g, " "));
   }
   
+  /*
+   * we don't ever want to truncate values
+   
   if (!hasOption_(options, "noTruncate") && data[row][column]) {
     data[row][column] = data[row][column].toString().substr(0, 256);
-  }
+  }*/
 
   if (hasOption_(options, "debugLocation")) {
     data[row][column] = "[" + row + "," + column + "]" + data[row][column];
